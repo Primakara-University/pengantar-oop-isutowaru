@@ -4,16 +4,24 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        boolean salah = false;
+        String nama;
         try (Scanner input = new Scanner(System.in)) {
+            do {
             System.out.print("Masukkan nama Anda: ");
-            String nama = input.nextLine().trim();
+            nama = input.nextLine().trim();
 
-            if (nama.isEmpty()) {
-                System.out.println("Nama tidak boleh kosong.");
-                return;
-            }
 
-            System.out.println("Selamat datang, " + nama + "!");
+
+                if (nama == "") {
+                    System.out.println("Nama tidak boleh kosong.");
+                    salah = true;
+                } else {System.out.println("Selamat datang, " + nama + "!");
+                    salah = false;
+                }
+            } while (salah == true);
+
+
         }
     }
 }
